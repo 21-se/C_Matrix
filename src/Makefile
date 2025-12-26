@@ -1,5 +1,5 @@
 COMPILER    = gcc
-C_FLAGS     = -std=c11 -g # -Wall -Wextra -Werror
+C_FLAGS     = -std=c11 -g -Wall -Wextra -Werror
 GCOV_FLAGS  = -fprofile-arcs -ftest-coverage
 CHECK_FLAGS = -lcheck -lm -lpthread -lsubunit
 ARCHIVER    = ar

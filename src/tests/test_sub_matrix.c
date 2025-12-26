@@ -93,6 +93,7 @@ END_TEST
 Suite *suite_sub_matrix(void) {
   TCase *tcase_sub_matrix = tcase_create("TCase sub matrix");
   tcase_add_test(tcase_sub_matrix, test_sub_matrix_basic);
+  tcase_add_test(tcase_sub_matrix, test_sub_different_rows_cols);
   tcase_add_test(tcase_sub_matrix, test_sub_matrix_different_rows);
 
   Suite *suite_sub_matrix = suite_create("\033[94mS21_SUB_MATRIX\033[0m");

@@ -87,31 +87,6 @@ START_TEST(test_sum_matrix_different_cols) {
 }
 END_TEST
 
-START_TEST(test_sum_matrix_not_allocate_result) {
-  matrix_t A;
-  matrix_t B;
-  matrix_t result;
-
-  int rows_a = 3, cols_a = 3;
-  int rows_b = 3, cols_b = 3;
-
-  s21_create_matrix(rows_a, cols_a, &A);
-  s21_create_matrix(rows_b, cols_b, &B);
-
-  const double data[] = {1.1, 2.1, 5.4, 2.3, 4.4, 7.7, 8.8, 8.1, 4.0};
-
-  FillMatrix(rows_a, cols_a, data, &A);
-  FillMatrix(rows_b, cols_b, data, &B);
-
-  int status = s21_sum_matrix(&A, &B, &result);
-  int expected_status = CALCULATION_ERROR;
-
-  ck_assert_int_eq(status, expected_status);
-  s21_remove_matrix(&A);
-  s21_remove_matrix(&B);
-}
-END_TEST
-
 Suite *suite_sum_matrix(void) {
   TCase *tcase_sum_matrix = tcase_create("TCase sum matrix");
   tcase_add_test(tcase_sum_matrix, test_sum_matrix_basic);
